@@ -19,6 +19,11 @@ def largest_prime_factor(number, n = 1)
   largest_prime_factor(number, n + 1)
 end
 
+# requires a "composite number"
+
 p largest_prime_factor(600_851_475_143)
 p largest_prime_factor(12)
 p largest_prime_factor(360)
+p largest_prime_factor(1001)
+p largest_prime_factor(6_746_328_388_800)
+p largest_prime_factor(195_643_523_275_200)
