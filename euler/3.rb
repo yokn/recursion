@@ -12,7 +12,9 @@ def largest_prime_factor(number, n = 1)
   p "n:#{n}"
   p "number:#{number}"
   number /= n if (number % n).zero?
-  return n if number < Math.sqrt(initial_number) # https://projecteuler.net/overview=003
+  # https://projecteuler.net/overview=003
+  # "...every number n can at most have one prime factor greater than sqrt(n)."
+  return n if number < Math.sqrt(initial_number)
 
   largest_prime_factor(number, n + 1)
 end
