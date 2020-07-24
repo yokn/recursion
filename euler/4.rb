@@ -11,25 +11,20 @@
 require 'pry'
 
 def largest_palindrome_product(x = 999, y = 999, best = 1)
-  # binding.pry
-  return best if y == 100 # does not work under 990
+  return best if y == 100 # does not work under 990; stack overflow
 
   current = x * y
 
-  p current
   if palindrome?(current) && current > best
     best = x * y
-    p "new best: #{best}"
+    p "new best: #{best} at #{x}x#{y}"
     x -= 1
-    # binding.pry
   else
     if x == 100
       y -= 1
       x = 999
-      p 'reached me'
     else
       x -= 1
-      p 'no match, reducing x by one'
     end
   end
 
@@ -37,15 +32,7 @@ def largest_palindrome_product(x = 999, y = 999, best = 1)
 end
 
 def palindrome?(number)
-  # return number if number.to_s.split.reverse.join == number.to_s
-
-  # p 'here'
-  # 0
   number.to_s.split('').reverse.join == number.to_s
-  # p number.to_s.split('').reverse.join
-  # p number.to_s
 end
 
 p largest_palindrome_product
-
-# p palindrome?(111)
