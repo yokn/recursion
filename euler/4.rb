@@ -11,7 +11,7 @@
 require 'pry'
 
 def largest_palindrome_product(x = 999, y = 999, best = 1)
-  return best if y == 100 # does not work under 990; stack overflow
+  return best if y == 990 # does not work under 990; stack overflow
 
   current = x * y
 
