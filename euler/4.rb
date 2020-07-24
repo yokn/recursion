@@ -32,7 +32,7 @@ def largest_palindrome_product(x = 999, y = 999, best = 1)
 end
 
 def palindrome?(number)
-  number.to_s.split('').reverse.join == number.to_s
+  number.to_s.reverse == number.to_s
 end
 
 p largest_palindrome_product
